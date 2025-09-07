@@ -55,6 +55,7 @@ void showCountryPicker({
   required BuildContext context,
   required ValueChanged<Country> onSelect,
   VoidCallback? onClosed,
+  Widget? topView,
   List<String>? favorite,
   List<String>? exclude,
   List<String>? countryFilter,
@@ -74,6 +75,7 @@ void showCountryPicker({
     'Cannot provide both exclude and countryFilter',
   );
   showCountryListBottomSheet(
+    topView: topView,
     context: context,
     onSelect: onSelect,
     onClosed: onClosed,

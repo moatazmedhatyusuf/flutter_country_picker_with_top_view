@@ -13,6 +13,7 @@ void showCountryListBottomSheet({
   List<String>? countryFilter,
   bool showPhoneCode = false,
   CustomFlagBuilder? customFlagBuilder,
+  Widget? topView,
   CountryListThemeData? countryListTheme,
   bool searchAutofocus = false,
   bool showWorldWide = false,
@@ -34,6 +35,7 @@ void showCountryListBottomSheet({
       favorite,
       exclude,
       countryFilter,
+      topView,
       showPhoneCode,
       countryListTheme,
       searchAutofocus,
@@ -54,7 +56,8 @@ Widget _builder(
   List<String>? favorite,
   List<String>? exclude,
   List<String>? countryFilter,
-  bool showPhoneCode,
+    Widget? topView,
+    bool showPhoneCode,
   CountryListThemeData? countryListTheme,
   bool searchAutofocus,
   bool showWorldWide,
@@ -106,6 +109,7 @@ Widget _builder(
             header,
             Flexible(
               child: CountryListView(
+                topView: topView,
                 onSelect: onSelect,
                 exclude: exclude,
                 favorite: favorite,

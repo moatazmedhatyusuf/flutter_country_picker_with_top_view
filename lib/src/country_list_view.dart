@@ -48,9 +48,13 @@ class CountryListView extends StatefulWidget {
   /// Custom builder function for flag widget
   final CustomFlagBuilder? customFlagBuilder;
 
+  final Widget? topView;
+
+
   const CountryListView({
     Key? key,
     required this.onSelect,
+    this.topView,
     this.exclude,
     this.favorite,
     this.countryFilter,
@@ -148,6 +152,11 @@ class _CountryListViewState extends State<CountryListView> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 12),
+        if (widget.topView != null) ...[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            child: widget.topView!,)
+        ],
         if (widget.showSearch)
           TextField(
             autofocus: _searchAutofocus,
