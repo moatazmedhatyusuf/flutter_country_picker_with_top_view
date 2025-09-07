@@ -154,7 +154,7 @@ class _CountryListViewState extends State<CountryListView> {
         const SizedBox(height: 12),
         if (widget.topView != null) ...[
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 10),
             child: widget.topView!,)
         ],
         if (widget.showSearch)
